@@ -9,19 +9,17 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('username').innerText = `Привет, ${user.first_name}!`;
         }
 
-        if (document.getElementById('user-fullname')) {
-            document.getElementById('user-fullname').innerText = `Профиль: ${user.first_name} ${user.last_name || ''}`;
-            document.getElementById('user-id').innerText = `ID: ${user.id}`;
-        }
-
         if (document.getElementById('payButton')) {
             document.getElementById('payButton').onclick = () => {
-                // Пока просто показываем сообщение
-                document.getElementById('status').innerText = 'Платёж пока не активен. Мы скоро это исправим!';
-                // Для реального платежа используем webApp.openInvoice(...)
+                alert('Платёж пока не активен');
             };
         }
+
     } else {
-        alert('Telegram WebApp API не доступен.');
+        console.warn("Mini App запущен не в Telegram");
+        // Можно показать альтернативное сообщение
+        if (document.getElementById('username')) {
+            document.getElementById('username').innerText = "Это TradeSchool";
+        }
     }
 });

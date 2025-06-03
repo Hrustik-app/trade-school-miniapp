@@ -1,31 +1,57 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>HrustTradeSchool</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TradeSchool</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="app">
-    <main>
-      <h1 id="username">Загрузка...</h1>
-      <p>Добро пожаловать в РкгыеTradeSchool — твой путь к успешному трейдингу!</p>
-    </main>
+    <!-- Контент страниц -->
+    <div id="page-home" class="page active">
+      <h1>Добро пожаловать!</h1>
+      <p>Начни свой путь в трейдинге с TradeSchool прямо в Telegram.</p>
+      <div class="card">
+        <h2>Курс: Основы трейдинга</h2>
+        <p>Изучи базовые понятия, стратегии и термины за 7 уроков.</p>
+        <button onclick="navigateTo('course1')">Начать обучение</button>
+      </div>
+    </div>
+
+    <div id="page-courses" class="page">
+      <h1>Наши курсы</h1>
+      <div class="card">
+        <h2>Основы трейдинга</h2>
+        <p>7 уроков для новичков. Уровень: начинающий</p>
+        <button onclick="navigateTo('course1')">Открыть</button>
+      </div>
+      <div class="card">
+        <h2>Технический анализ</h2>
+        <p>Графики, индикаторы, свечи. Уровень: средний</p>
+        <button onclick="navigateTo('course2')">Открыть</button>
+      </div>
+    </div>
+
+    <div id="page-profile" class="page">
+      <h1>Ваш профиль</h1>
+      <p id="username">Загрузка...</p>
+      <p>Прогресс: <strong>2 из 7 уроков</strong></p>
+    </div>
 
     <!-- Нижнее меню -->
     <nav class="bottom-nav">
       <button class="nav-item active" data-page="home">
-        <span class="icon">🏠</span>
+        <span class="icon">🏠</span><br>
         <span class="label">Главная</span>
       </button>
       <button class="nav-item" data-page="courses">
-        <span class="icon">📚</span>
+        <span class="icon">📚</span><br>
         <span class="label">Курсы</span>
       </button>
-      <button class="nav-item" data-page="support">
-        <span class="icon">❓</span>
-        <span class="label">Поддержка</span>
+      <button class="nav-item" data-page="profile">
+        <span class="icon">👤</span><br>
+        <span class="label">Профиль</span>
       </button>
     </nav>
   </div>

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const navItems = document.querySelectorAll('.nav-item');
-  const mainContent = document.querySelector('main');
+  const pages = document.querySelectorAll('.page');
 
   // Telegram WebApp init
   if (window.Telegram && window.Telegram.WebApp) {
@@ -17,37 +17,15 @@ document.addEventListener('DOMContentLoaded', function () {
   // Переключение страниц
   navItems.forEach(item => {
     item.addEventListener('click', () => {
+      const page = item.getAttribute('data-page');
+
+      // Обновляем меню
       navItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
 
-      const page = item.getAttribute('data-page');
-
-      switch(page) {
-        case 'home':
-          mainContent.innerHTML = `
-            <h1>Главная</h1>
-            <p>Добро пожаловать в TradeSchool. Выберите курс ниже.</p>
-          `;
-          break;
-
-        case 'courses':
-          mainContent.innerHTML = `
-            <h1>Курсы</h1>
-            <ul>
-              <li><a href="#">Основы трейдинга</a></li>
-              <li><a href="#">Технический анализ</a></li>
-              <li><a href="#">Работа с графиками</a></li>
-            </ul>
-          `;
-          break;
-
-        case 'support':
-          mainContent.innerHTML = `
-            <h1>Поддержка</h1>
-            <p>Если у вас есть вопросы — напишите нам @TradeSchoolSupport</p>
-          `;
-          break;
-      }
+      // Показываем нужную страницу
+      pages.forEach(p => p.classList.remove('active'));
+      document.getElementById(`page-${page}`).classList.add('active');
     });
   });
 });

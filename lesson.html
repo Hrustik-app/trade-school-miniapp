@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Урок</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="lesson-title">Загрузка урока...</h1>
+    <div id="content">
+        <p>Это пример урока. Здесь будет текст и задания.</p>
+    </div>
+    <a href="/courses.html">← К курсам</a>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const courseId = urlParams.get('course');
+        const titleEl = document.getElementById("lesson-title");
+        titleEl.innerText = `Урок курса #${courseId}`;
+    </script>
+</body>
+</html>

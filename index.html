@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>TradeSchool</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TradeSchool</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1 id="username">Загрузка...</h1>
-    <nav>
-        <ul>
-            <li><a href="/courses.html">Курсы</a></li>
-            <li><a href="/profile.html">Профиль</a></li>
-            <li><a href="/payment.html">Оплата</a></li>
-        </ul>
+  <div id="app">
+    <main>
+      <h1 id="username">Загрузка...</h1>
+      <p>Добро пожаловать в TradeSchool — твой путь к успешному трейдингу!</p>
+    </main>
+
+    <!-- Нижнее меню -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-page="home">
+        <span class="icon">🏠</span>
+        <span class="label">Главная</span>
+      </button>
+      <button class="nav-item" data-page="courses">
+        <span class="icon">📚</span>
+        <span class="label">Курсы</span>
+      </button>
+      <button class="nav-item" data-page="support">
+        <span class="icon">❓</span>
+        <span class="label">Поддержка</span>
+      </button>
     </nav>
+  </div>
 
-    <p>Добро пожаловать в TradeSchool — твой путь к успешному трейдингу!</p>
-
-    <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

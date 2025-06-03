@@ -1,4 +1,4 @@
-/* === Общие стили === */
+/* === Глобальные стили === */
 * {
   margin: 0;
   padding: 0;
@@ -6,21 +6,52 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background-color: #121212;
   color: #ffffff;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
 
-main {
+#app {
   flex: 1;
   padding: 20px;
 }
 
 h1 {
+  font-size: 24px;
   margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 15px;
+  color: #ccc;
+}
+
+.card {
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.card button {
+  background-color: #3498db;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #2980b9;
 }
 
 /* === Нижнее меню === */
@@ -30,28 +61,24 @@ h1 {
   align-items: center;
   height: 60px;
   background-color: #1f1f1f;
-  border-top: 1px solid #333;
   position: sticky;
   bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
+  border-top: 1px solid #333;
 }
 
 .nav-item {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  border: none;
+  text-align: center;
   color: #aaa;
   font-size: 14px;
   cursor: pointer;
-  transition: all 0.2s ease;
 }
 
 .nav-item.active {
-  color: #ffffff;
+  color: #fff;
 }
 
 .icon {
